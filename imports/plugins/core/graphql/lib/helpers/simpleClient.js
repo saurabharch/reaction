@@ -7,7 +7,6 @@ import deleteFlatRateFulfillmentMethod from "../mutations/deleteFlatRateFulfillm
 import enablePaymentMethodForShop from "../mutations/enablePaymentMethodForShop.graphql";
 import placeOrderWithExampleIOUPayment from "../mutations/placeOrderWithExampleIOUPayment.graphql";
 import placeOrderWithStripeCardPayment from "../mutations/placeOrderWithStripeCardPayment.graphql";
-import availablePaymentMethods from "../queries/availablePaymentMethods.graphql";
 import paymentMethods from "../queries/paymentMethods.graphql";
 
 /**
@@ -74,10 +73,6 @@ export default {
     }
   },
   queries: {
-    availablePaymentMethods: (variables) => {
-      setTokenHeader();
-      return client.query(availablePaymentMethods)(variables);
-    },
     paymentMethods: (variables) => {
       setTokenHeader();
       return client.query(paymentMethods)(variables);
