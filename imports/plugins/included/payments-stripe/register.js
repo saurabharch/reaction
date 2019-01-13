@@ -45,13 +45,6 @@ Reaction.registerPackage({
       provides: ["paymentSettings"],
       container: "dashboard",
       template: "stripeSettings"
-    },
-
-    // Payment form for checkout
-    {
-      template: "stripePaymentForm",
-      provides: ["paymentMethod"],
-      icon: "fa fa-cc-stripe"
     }
   ]
 });
