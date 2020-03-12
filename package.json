@@ -98,7 +98,7 @@
     "moment": "^2.20.1",
     "moment-timezone": "^0.5.14",
     "mongodb": "^3.0.5",
-    "nock": "^9.1.6",
+    "nock": "^11.9.0",
     "node-fetch": "^2.0.0",
     "node-geocoder": "^3.22.0",
     "nodemailer-wellknown": "^0.2.3",
