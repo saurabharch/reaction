@@ -1,40 +1,114 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.11.0
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  'SNYK-JS-BOOTSTRAP-72889':
-  - bootstrap:
-      reason: We're not going to update to Bootstrap 4 and we don't use Bootstrap JS
-      expires: '2019-12-31T20:23:03.274Z'
-  'SNYK-JS-BOOTSTRAP-72890':
-  - bootstrap:
-      reason: We're not going to update to Bootstrap 4 and we don't use Bootstrap JS. Will re-evaluate once bootstrap is eliminated.
-      expires: '2019-12-31T20:23:03.274Z'
-  'npm:bootstrap:20160627':
+  SNYK-JS-BOOTSTRAP-72889:
     - bootstrap:
-      reason: We're not going to update to Bootstrap 4 and we don't use Bootstrap JS
-      expires: '2019-12-31T20:23:03.274Z'
-  'npm:bootstrap:20180529':
-      - bootstrap:
         reason: We're not going to update to Bootstrap 4 and we don't use Bootstrap JS
         expires: '2019-12-31T20:23:03.274Z'
-  'SNYK-JS-CHOWNR-73502':
-    - '*':
-      reason: "We don't use chownr in an untrusted system where a possible attacker has access to the filesystem where the user script is running chown. chownr is a recursive fs operation and TOCTOU is fundamental to the way it works."
-      expires: '2019-12-31T20:23:03.274Z'
+  SNYK-JS-BOOTSTRAP-72890:
+    - bootstrap:
+        reason: >-
+          We're not going to update to Bootstrap 4 and we don't use Bootstrap
+          JS. Will re-evaluate once bootstrap is eliminated.
+        expires: '2019-12-31T20:23:03.274Z'
+  'npm:bootstrap:20160627':
+    - bootstrap: null
+    - reason: We're not going to update to Bootstrap 4 and we don't use Bootstrap JS
+    - expires: '2019-12-31T20:23:03.274Z'
+  'npm:bootstrap:20180529':
+    - bootstrap: null
+    - reason: We're not going to update to Bootstrap 4 and we don't use Bootstrap JS
+    - expires: '2019-12-31T20:23:03.274Z'
+  SNYK-JS-CHOWNR-73502:
+    - '*': null
+    - reason: >-
+        We don't use chownr in an untrusted system where a possible attacker has
+        access to the filesystem where the user script is running chown. chownr
+        is a recursive fs operation and TOCTOU is fundamental to the way it
+        works.
+    - expires: '2019-12-31T20:23:03.274Z'
   'npm:chownr:20180731':
-    - '*':
-      reason: "PR in chownr to resolve issue will require node >= 10.8 https://github.com/isaacs/chownr/pull/15"
-      expires: '2019-12-31T20:23:03.274Z'
+    - '*': null
+    - reason: >-
+        PR in chownr to resolve issue will require node >= 10.8
+        https://github.com/isaacs/chownr/pull/15
+    - expires: '2019-12-31T20:23:03.274Z'
   'npm:mem:20180117':
-    - '*':
-      reason: String of dependencies that need to be updated - oslocale (PR https://github.com/sindresorhus/os-locale/pull/31) followed by yargs then transliteration
-      expires: '2019-01-14T00:00:00.274Z'
+    - '*': null
+    - reason: >-
+        String of dependencies that need to be updated - oslocale (PR
+        https://github.com/sindresorhus/os-locale/pull/31) followed by yargs
+        then transliteration
+    - expires: '2019-01-14T00:00:00.274Z'
   'npm:braces:20180219':
-    - '*':
-      reason: Low severity issue we'll address as part of our 2.0 final security work.
-      expires: '2019-01-14T00:00:00.274Z'
-  'SNYK-JS-MERGE-72553':
-    - '*':
-      reason: Low severity issue we'll address as part of our 2.0 final security work.
-      expires: '2019-01-14T00:00:00.274Z'
+    - '*': null
+    - reason: Low severity issue we'll address as part of our 2.0 final security work.
+    - expires: '2019-01-14T00:00:00.274Z'
+  SNYK-JS-MERGE-72553:
+    - '*': null
+    - reason: Low severity issue we'll address as part of our 2.0 final security work.
+    - expires: '2019-01-14T00:00:00.274Z'
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@reactioncommerce/hooks > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - dnd-core > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - nock > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - query-parse > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-apollo > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-color > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-dates > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-dnd > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-dnd-html5-backend > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - apollo-server-express > apollo-server-core > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - apollo-server > apollo-server-core > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - dnd-core > redux > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-dnd > dnd-core > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-color > reactcss > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@babel/plugin-proposal-function-sent > @babel/helper-wrap-function > @babel/traverse > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - apollo-server-express > apollo-server-core > apollo-engine-reporting > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - apollo-server > apollo-server-core > apollo-engine-reporting > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - apollo-server > apollo-server-express > apollo-server-core > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - react-dnd > dnd-core > redux > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - node-geocoder > request-promise > request-promise-core > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@babel/plugin-proposal-function-sent > @babel/helper-wrap-function > @babel/traverse > @babel/generator > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@reactioncommerce/file-collections > tus-node-server > @google-cloud/storage > async > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - apollo-server > apollo-server-express > apollo-server-core > apollo-engine-reporting > lodash:
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@babel/plugin-proposal-function-sent > @babel/helper-wrap-function > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@babel/plugin-proposal-function-sent > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@reactioncommerce/components > react-select > emotion > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@reactioncommerce/file-collections > tus-node-server > @google-cloud/storage > @google-cloud/common > google-auto-auth > async > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@reactioncommerce/file-collections > tus-node-server > @google-cloud/storage > gcs-resumable-upload > google-auto-auth > async > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
+    - '@reactioncommerce/file-collections > tus-node-server > @google-cloud/storage > @google-cloud/common > split-array-stream > async > lodash':
+        patched: '2020-05-01T01:18:42.650Z'
